@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelas Tahsin QuranBest</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#BB8F63',
+            'gold-dark': '#965F28',
+            dark: '#202020',
+            dark2: '#262525',
+            'text-dark': '#302A2A',
+            'text-gray': '#5B5959',
+            'bg-light': '#FBF9F5',
+            'bg-card': '#F4F5FA',
+            border: '#CED2DE',
+            'zoom-blue': '#4A8CFF',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans">
+  <div id="app-wrapper"
+    class="w-full max-w-[430px] bg-white relative [overflow-x:clip] shadow-[0_0_60px_rgba(0,0,0,0.15)] mx-auto pt-[53px]">
+
+    <!-- NAVBAR -->
+    <nav
+      class="bg-dark h-[53px] flex items-center px-[18px] justify-between fixed top-0 left-0 right-0 z-[100] max-w-[430px] mx-auto">
+      <img src="img/logo-akademi.svg" alt="Logo Akademi QuranBest" class="h-[32px]">
+      <div class="hamburger flex flex-col gap-1 cursor-pointer" id="menuBtn">
+        <span class="w-[22px] h-[2px] bg-white rounded-[2px] block"></span>
+        <span class="w-[22px] h-[2px] bg-white rounded-[2px] block"></span>
+        <span class="w-[22px] h-[2px] bg-white rounded-[2px] block"></span>
+      </div>
+    </nav>
+
+    <!-- DROPDOWN NAV MENU -->
+    <div class="nav-dropdown bg-white fixed top-[53px] left-0 right-0 z-[90] max-w-[430px] mx-auto" id="navDropdown">
+      <nav class="pt-[6px]">
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-hero')">
+          <span class="flex-1">Beranda</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-mengapa')">
+          <span class="flex-1">Mengapa Kelas Tahsin QuranBest</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-waktu')">
+          <span class="flex-1">Waktu &amp; Pembelajaran</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-pengajar')">
+          <span class="flex-1">Profil Pengajar</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-testimoni')">
+          <span class="flex-1">Testimoni Peserta</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-gallery')">
+          <span class="flex-1">Gallery</span>
+        </a>
+        <a class="menu-item flex items-center px-6 py-[17px] text-base text-text-dark cursor-pointer border-b border-[#F0F0F0] gap-[14px] relative bg-white no-underline"
+          onclick="navTo('sec-faq')">
+          <span class="flex-1">FAQ</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section id="sec-hero">
+      <!-- Banner Slider -->
+      <div class="banner-slider relative w-full overflow-hidden mb-4" style="height: 200px;">
+        <div class="banner-slides flex transition-transform duration-1000 ease-in-out" id="banner-slides">
+          <!-- Slide 1 -->
+          <div class="banner-slide flex-shrink-0 w-full relative">
+            <a href="https://plus.quranbest.com/placement-test/form" target="_blank" class="block w-full h-full">
+              <img src="img/hero-banner.png" alt="Belajar Tahsin Online QuranBest" class="w-full h-auto">
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="banner-slide flex-shrink-0 w-full relative">
+            <a href="https://plus.quranbest.com/placement-test/form" target="_blank" class="block w-full h-full">
+              <img src="img/hero-banner.png" alt="Belajar Tahsin Online QuranBest" class="w-full h-auto">
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="banner-slide flex-shrink-0 w-full relative">
+            <a href="https://plus.quranbest.com/placement-test/form" target="_blank" class="block w-full h-full">
+              <img src="img/hero-banner.png" alt="Belajar Tahsin Online QuranBest" class="w-full h-auto">
+            </a>
+          </div>
+        </div>
+
+        <!-- Slider Indicators -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2">
+          <div class="w-[18px] h-[6px] rounded-[4px] bg-gold transition-all cursor-pointer banner-dot active"
+            onclick="goToBannerSlide(0)"></div>
+          <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer banner-dot"
+            onclick="goToBannerSlide(1)"></div>
+          <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer banner-dot"
+            onclick="goToBannerSlide(2)"></div>
+        </div>
+      </div>
+
+      <!-- What is section -->
+      <div class="px-5 fade-up">
+        <div class="mb-4">
+          <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Apa itu Kelas Tahsin
+            QuranBest</h2>
+        </div>
+        <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2">Program pembelajaran tahsin Al-Quran
+          secara online yang dirancang untuk membantu kamu membaca Al-Quran dengan tartil dan benar sesuai kaidah
+          tajwid. Tersedia untuk semua usia dan tingkat kemampuan, dengan pengajar berpengalaman dan metode yang
+          menyenangkan.</p>
+      </div>
+
+      <!-- Why join -->
+      <div id="sec-mengapa" class="px-5 mt-6 fade-up">
+        <div class="mb-4">
+          <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Mengapa harus join kelas
+            tahsin QuranBest</h2>
+        </div>
+        <ul
+          class="mt-3 pl-2 list-disc list-inside space-y-2 text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] fade-up">
+          <li>Asyik &amp; Menyenangkan</li>
+          <li>Menambah Saudara</li>
+          <li>Jadwal Fleksibel</li>
+          <li>Tenaga Pengajar Berpengalaman</li>
+          <li>Motivasi untuk terus bersama Al-Quran</li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="https://plus.quranbest.com/placement-test/form" target="_blank"
+          class="flex items-center justify-center bg-gold text-white text-base font-semibold py-3 px-4 rounded-[4px] mt-5 no-underline transition-colors active:bg-gold-dark active:scale-[0.98] w-full">
+          Gabung Kelas Sekarang
+        </a>
+      </div>
+    </section>
+
+    <div class="h-px bg-border mx-5 mt-7"></div>
+
+    <!-- SECTION 2: WAKTU & SISTEM PEMBELAJARAN -->
+    <section id="sec-waktu" class="px-5 py-7 fade-up">
+      <div class="mb-4">
+        <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Waktu &amp; Sistem
+          Pembelajaran</h2>
+      </div>
+      <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-5">Sistem pembelajaran tahsin
+        dirancang secara bertahap sesuai kemampuan peserta, mulai dari tingkat dasar hingga lanjutan. Waktu pelaksanaan
+        Kelas Tahsin QuranBest dilakukan secara online, peserta bisa memilih jadwal sendiri. Untuk metode pembelajaran
+        kelas</p>
+
+      <!-- Accordion Days -->
+      <div class="flex flex-col gap-[5px] stagger space-y-1">
+
+        <!-- Senin - open -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-senin">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('senin')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron open w-4 h-4 text-[#666]" id="chev-senin" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Senin</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">12
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative open bg-white pl-2" id="body-senin">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Senin</div>
+                <div class="text-[11px] text-gray-500">10:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T39A
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Dinar Kartika
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Senin</div>
+                <div class="text-[11px] text-gray-500">13:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T39A
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Dinar Kartika
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Senin</div>
+                <div class="text-[11px] text-gray-500">20:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T39A
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Dinar Kartika
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Selasa -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-selasa">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('selasa')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-selasa" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Selasa</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">8
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-selasa">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Selasa</div>
+                <div class="text-[11px] text-gray-500">10:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T40B
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 2A</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Ahmad Fauzi
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Selasa</div>
+                <div class="text-[11px] text-gray-500">14:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T40B
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 2A</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Ahmad Fauzi
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Rabu -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-rabu">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('rabu')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-rabu" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Rabu</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">10
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-rabu">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Rabu</div>
+                <div class="text-[11px] text-gray-500">09:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T41C
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1C</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Siti Aminah
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Rabu</div>
+                <div class="text-[11px] text-gray-500">16:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T41C
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1C</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Siti Aminah
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Kamis -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-kamis">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('kamis')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-kamis" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Kamis</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">6
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-kamis">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Kamis</div>
+                <div class="text-[11px] text-gray-500">11:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T42D
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 3A</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Muhammad Rizki
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Jumat -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-jumat">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('jumat')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-jumat" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Jumat</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">9
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-jumat">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Jumat</div>
+                <div class="text-[11px] text-gray-500">15:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T43E
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 2B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Nurul Huda
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Jumat</div>
+                <div class="text-[11px] text-gray-500">18:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T43E
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 2B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Nurul Huda
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Sabtu -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-sabtu">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('sabtu')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-sabtu" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Sabtu</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">7
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-sabtu">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Sabtu</div>
+                <div class="text-[11px] text-gray-500">08:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T44F
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 1A</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Abdul Rahman
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Ahad -->
+        <div class="rounded-[6px] overflow-hidden bg-[#F6F6F6] fade-up" id="acc-ahad">
+          <div class="flex items-center justify-between px-[10px] py-[14px] cursor-pointer select-none gap-1"
+            onclick="toggleAcc('ahad')">
+            <div class="flex items-center gap-[7px]">
+              <svg class="chevron w-4 h-4 text-[#666]" id="chev-ahad" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              <span class="text-base font-semibold text-black tracking-[-0.02em]">Kelas Tahsin Ahad</span>
+            </div>
+            <div class="flex items-center gap-[6px]">
+              <span class="bg-gold text-white text-xs font-bold px-[10px] py-[5px] rounded-[70px] whitespace-nowrap">5
+                Kelas</span>
+            </div>
+          </div>
+          <div class="accordion-body relative bg-white pl-2" id="body-ahad">
+
+            <!-- Schedule item helper -->
+
+            <div class="relative flex gap-4 pt-4">
+
+              <!-- LEFT: day + time -->
+              <div class="w-18 text-left">
+                <div class="text-[15px] font-bold text-black">Ahad</div>
+                <div class="text-[11px] text-gray-500">12:00 WIB</div>
+              </div>
+
+              <!-- DOT + LINE -->
+              <div class="relative flex flex-col items-center">
+                <!-- line atas -->
+                <div class="absolute top-6 -bottom-2 w-[2px] bg-gold"></div>
+                <!-- dot -->
+                <div
+                  class="relative z-10 w-[16px] h-[16px] rounded-full border-2 border-gold bg-white flex items-center justify-center">
+                  <div class="w-[8px] h-[8px] bg-gold rounded-full"></div>
+                </div>
+              </div>
+
+
+              <!-- CARD -->
+              <div class="flex-1 bg-[#F5F2ED] rounded-[20px] p-4 shadow-sm">
+                <div class="text-[15px] font-bold text-[#7A5C2E] uppercase">
+                  Kelas T45G
+                </div>
+                <div class="text-[13px] text-gray-500 mt-1">Level 3B</div>
+
+                <div class="flex items-center gap-2 mt-3">
+                  <div class="w-6 h-6 rounded-full bg-gray-300"></div>
+                  <span class="text-xs font-semibold text-gray-600">
+                    Ustdh. Fatimah Azzahra
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2 mt-2">
+                  <img src="img/zoom-icon.svg" alt="Zoom" class="w-6 h-6">
+                  <span class="text-[13px] font-bold text-blue-500">Live Zoom</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="h-px bg-border mx-5"></div>
+
+    <!-- SECTION 3: PROFIL PENGAJAR -->
+    <section id="sec-pengajar" class="py-7 fade-up">
+      <div class="px-5">
+        <div class="mb-4">
+          <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Profil Pengajar</h2>
+        </div>
+        <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-5">Belajar bersama pengajar
+          berpengalaman dan bersertifikat yang siap membimbing kamu dalam perjalanan membaca Al-Quran dengan tartil.</p>
+      </div>
+
+      <div class="overflow-x-auto px-5 pb-1 no-scrollbar" id="teacherScroll">
+        <div class="flex gap-[14px] w-max">
+          <!-- Teacher cards -->
+          <div
+            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
+              <img src="img/pemateri/pemateri-1.png" alt="Ustadz Abu Amr" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Abu
+                Amr</div>
+              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Utama Kelas Tahsin</div>
+            </div>
+          </div>
+          <div
+            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
+              <img src="img/pemateri/pemateri-2.png" alt="Ustadz Irfan Fahmi" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Irfan
+                Fahmi</div>
+              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
+            </div>
+          </div>
+          <div
+            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
+              <img src="img/pemateri/pemateri-3.png" alt="Ustadz Gilang Ramdani" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Gilang
+                Ramdani</div>
+              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="flex gap-1 justify-center mt-[14px]" id="teacherDots">
+        <div class="w-[18px] h-[6px] rounded-[4px] bg-gold transition-all cursor-pointer cdot active"
+          onclick="scrollTeacher(0)"></div>
+        <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
+          onclick="scrollTeacher(1)">
+        </div>
+        <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
+          onclick="scrollTeacher(2)">
+        </div>
+      </div>
+    </section>
+
+    <div class="h-px bg-border mx-5"></div>
+
+    <!-- SECTION 4: TESTIMONIAL -->
+    <section id="sec-testimoni" class="px-5 py-7 fade-up">
+      <div class="mb-4">
+        <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Testimonial Peserta</h2>
+      </div>
+      <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-5">Apa kata para peserta yang telah
+        merasakan manfaat belajar bersama QuranBest.</p>
+
+      <div class="bg-bg-card rounded-[6px] p-5 mb-3 fade-up">
+        <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em]">Pembelajaran menyenangkan, arahan yg
+          jelas
+          dg contoh2 yg mudah diaplikasikan, kenyamanan dlm proses belajar, diberikan wawasan lebih luas.</p>
+        <div class="h-px bg-border my-[14px]"></div>
+        <div class="flex items-center gap-[10px]">
+          <div
+            class="w-[38px] h-[38px] rounded-full bg-[#E8E8E8] flex-shrink-0 flex items-center justify-center text-base text-[#A6A6A6] font-semibold">
+            M</div>
+          <div>
+            <div class="text-[15px] font-semibold text-text-dark">Lestary</div>
+            <div class="text-xs text-text-gray mt-[2px]">Kelas T39A-Tahfidz 1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-bg-card rounded-[6px] p-5 mb-3 fade-up">
+        <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em]">Assalamu'alaikum, saya terbantu dengan
+          adanya tahsin online quran best,kalo bisa ada file pdf untuk pendanping dan video pembelajarannya isinya
+          materi
+          tahsin yang akan di pelajari ja ,jadinya tdk terlalu panjang videonya 🙏🏻 🙏🏻 🙏🏻</p>
+        <div class="h-px bg-border my-[14px]"></div>
+        <div class="flex items-center gap-[10px]">
+          <div
+            class="w-[38px] h-[38px] rounded-full bg-[#E8E8E8] flex-shrink-0 flex items-center justify-center text-base text-[#A6A6A6] font-semibold">
+            P</div>
+          <div>
+            <div class="text-[15px] font-semibold text-text-dark">Purnomo Aji</div>
+            <div class="text-xs text-text-gray mt-[2px]">Kelas T41I-3B</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-bg-card rounded-[6px] p-5 mb-3 fade-up">
+        <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em]">Saya tidak
+          bisa berkata-kata, pokoknya Qur'an Best ter the Best! Jazakumullah khyr buat semuanya. Semoga Allah balas
+          segala kebaikan semuanya, terutama ustadz-ustadz dan ustadzah-ustadzah yang mengajar kami.</p>
+        <div class="h-px bg-border my-[14px]"></div>
+        <div class="flex items-center gap-[10px]">
+          <div
+            class="w-[38px] h-[38px] rounded-full bg-[#E8E8E8] flex-shrink-0 flex items-center justify-center text-base text-[#A6A6A6] font-semibold">
+            S</div>
+          <div>
+            <div class="text-[15px] font-semibold text-text-dark">Susi Salsiani</div>
+            <div class="text-xs text-text-gray mt-[2px]">Kelas H2A</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-px bg-border mx-5"></div>
+
+    <!-- SECTION 5: GALLERY -->
+    <section id="sec-gallery" class="px-5 py-7 fade-up">
+      <div class="mb-4">
+        <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">Gallery Kelas Tahsin</h2>
+      </div>
+      <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-4">Foto dan video kegiatan kelas
+        tahsin online bersama peserta dan pengajar terbaik kami.</p>
+
+      <!-- Youtubr Player -->
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden" style="isolation: isolate;">
+        <iframe src="https://www.youtube.com/embed/HSzpzXhTmDw?rel=0" class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <p class="text-[16px] font-semibold text-text-dark mt-6">Foto Kegiatan Kelas Tahsin Online</p>
+
+      <!-- Photo Grid -->
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-1.png" alt="Gallery 1" class="w-full h-full object-cover">
+        </div>
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-2.png" alt="Gallery 2" class="w-full h-full object-cover">
+        </div>
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-3.png" alt="Gallery 3" class="w-full h-full object-cover">
+        </div>
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-4.png" alt="Gallery 4" class="w-full h-full object-cover">
+        </div>
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-5.png" alt="Gallery 5" class="w-full h-full object-cover">
+        </div>
+        <div class="h-[100px] rounded-[4px] overflow-hidden relative">
+          <img src="img/gallery/gallery-6.png" alt="Gallery 6" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FINAL CTA -->
+    <section class="bg-dark2 px-5 py-8 fade-up">
+
+      <!-- Countdown Timer -->
+      <div class="mb-6">
+        <div class="text-center mb-4">
+          <div class="text-[11px] text-[#9A9A9A] uppercase tracking-[0.1em]">Pendaftaran Ditutup Dalam</div>
+        </div>
+        <div class="grid grid-cols-4 gap-3">
+          <!-- Hari Card -->
+          <div class="bg-[#1a1a1a] rounded-[8px] p-4 border border-gold border-opacity-30">
+            <div class="text-center">
+              <div class="text-[36px] font-bold text-white leading-none" id="countdown-days">11</div>
+              <div class="text-[11px] text-[#9A9A9A] mt-3 uppercase tracking-wider">Hari</div>
+            </div>
+          </div>
+          <!-- Jam Card -->
+          <div class="bg-[#1a1a1a] rounded-[8px] p-4 border border-gold border-opacity-30">
+            <div class="text-center">
+              <div class="text-[36px] font-bold text-white leading-none" id="countdown-hours">00</div>
+              <div class="text-[11px] text-[#9A9A9A] mt-3 uppercase tracking-wider">Jam</div>
+            </div>
+          </div>
+          <!-- Menit Card -->
+          <div class="bg-[#1a1a1a] rounded-[8px] p-4 border border-gold border-opacity-30">
+            <div class="text-center">
+              <div class="text-[36px] font-bold text-white leading-none" id="countdown-minutes">00</div>
+              <div class="text-[11px] text-[#9A9A9A] mt-3 uppercase tracking-wider">Menit</div>
+            </div>
+          </div>
+          <!-- Detik Card -->
+          <div class="bg-[#1a1a1a] rounded-[8px] p-4 border border-gold border-opacity-30">
+            <div class="text-center">
+              <div class="text-[36px] font-bold text-white leading-none" id="countdown-seconds">00</div>
+              <div class="text-[11px] text-[#9A9A9A] mt-3 uppercase tracking-wider">Detik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px bg-gold mx-5 my-5"></div>
+
+
+      <h2 class="text-[24px] font-bold text-white leading-[1.4] tracking-[-0.02em] max-w-[260px]">TUNGGU APA LAGI
+        GABUNG SEKARANG!</h2>
+      <p class="mb-6 text-[15px] text-[#9A9A9A] leading-[1.6] mt-3 tracking-[-0.01em]">Program tahsin terpercaya dengan
+        pengajar berpengalaman. Mulai perjalanan membaca Al-Quran kamu bersama ribuan peserta aktif di seluruh
+        Indonesia.</p>
+
+      <!-- Stats Cards Grid -->
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <!-- Peserta Card -->
+        <div class="bg-[#1a1a1a] rounded-[8px] p-4"
+          style="border: 1px solid rgba(187, 143, 99, 0.2); border-left: 4px solid #BB8F63;">
+          <div>
+            <div class="text-[32px] font-bold text-white leading-none">8,632</div>
+            <div class="text-[12px] text-[#9A9A9A] mt-3 leading-[1.4]">Peserta Belajar di Kelas Online</div>
+          </div>
+        </div>
+        <!-- Kelas Card -->
+        <div class="bg-[#1a1a1a] rounded-[8px] p-4"
+          style="border: 1px solid rgba(187, 143, 99, 0.2); border-left: 4px solid #BB8F63;">
+          <div>
+            <div class="text-[32px] font-bold text-white leading-none">584</div>
+            <div class="text-[12px] text-[#9A9A9A] mt-3 leading-[1.4]">Kelas Terselenggara</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <a href="https://plus.quranbest.com/placement-test/form" target="_blank"
+        class="flex items-center justify-center bg-gold text-white text-[18px] font-semibold py-[14px] px-4 rounded-[4px] no-underline transition-colors active:bg-gold-dark w-full">
+        Gabung Kelas Sekarang
+      </a>
+    </section>
+
+    <div class="h-px bg-border mx-5"></div>
+
+    <!-- SECTION 7: FAQ -->
+    <section id="sec-faq" class="px-5 py-7 fade-up">
+      <div class="mb-4">
+        <h2 class="text-[20px] font-bold text-text-dark leading-[1.25] tracking-[-0.02em]">F.A.Q</h2>
+      </div>
+      <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-5">Pertanyaan yang sering ditanyakan
+        oleh calon peserta kelas tahsin QuranBest.</p>
+
+      <div class="mt-1">
+        <!-- FAQ items -->
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.5" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.5" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Apakah kelas tahsin online
+              QuranBest berbayar?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Kelas Reguler Gratis, peserta
+            boleh infaq untuk mendukung program kelas tahsin reguler, kami sediakan pilihan infaq bagi yang berminat
+          </div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Seperti apa gambaran kelas
+              reguler tahsin online QuranBest?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">
+            • Kelas full online<br>
+            • Perbaikan bacaan Al Quran dilakukan melalui talaqqi bersama guru<br>
+            • Kegiatan talaqqi dilaksanakan sekali dalam sepekan<br>
+            • 1 kelas berisi 15 peserta<br>
+            • Setiap kelas dibimbing & didampingi oleh 1 guru<br>
+            • Kelas sesuai gender: peserta perempuan bersama guru perempuan, peserta laki-laki bersama guru
+            laki-laki<br>
+            • Materi diberikan sebelum pelaksanaan talaqqi; disampaikan secara live atau dalam bentuk rekaman video
+          </div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Bagaimana jadwalnya?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Peserta bisa memilih
+            jadwal-jadwal yang kami sediakan, peserta yang melakukan pendaftaran lebih awal akan mendapatkan lebih
+            banyak
+            alternatif pilihan jadwal</div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Apakah ada kelas tahsin
+              online dengan privasi lebih dan talaqqi lebih lama?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Kami sediakan kelas privat
+            dengan peserta hanya 4 orang/kelas. Untuk info kelas privat silakan hubungi Admin di <a
+              href="https://wa.me/6282111818134" target="_blank"
+              class="text-gold hover:underline">https://wa.me/62821-1181-8134</a>
+          </div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Saat mendaftar saya
+              kesullitan untuk mendapatkan OTP verifikasi?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Kode OTP tidak terkirim
+            biasanya disebabkan karena adanya kesalahan dalam pengisian/submit kota/kabupaten tempat tinggal seperti
+            pada
+            gambar di atas.<br>
+            Untuk mendapat kode OTP saat isi formulir harap pastikan:<br>
+            1. Pilih kota/kabupaten dengan benar. Ketik nama kota/kabupaten dengan ketik 3 huruf awal, nanti akan ada
+            pilihan kota kabupaten<br>
+            2. Klik kota/kabupaten yang sesuai domisili. Jika sudah benar tandanya tidak akan muncul submit untuk
+            wilayah
+            luar Indonesia<br>
+            3. Jika sudah dirasa benar silahkan klik tombol request OTP verifikasi</div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Saya kesulitan untuk
+              membuat
+              rekaman Az Zumar: 6-7 saat placement test, bagaimana caranya?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Silakan coba langkah berikut
+            :<br>
+            1) Cek browser (pastikan menggunakan chrome)<br>
+            2) Jika sudah menggunakan chrome silakan cek perizinan mic, caranya:<br>
+            ● Ketik tanda titik 3 di pojok kanan atas<br>
+            ● Pilih setelan/settings<br>
+            ● Pilih setelan situs/site setting<br>
+            ● Pastikan perizinan mic aktif (tombol on ke kanan)
+          </div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Sudah berhasil rekam tapi
+              tidak bisa upload, kenapa dan bagaimana ya?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Biasanya karena size terlalu
+            besar, bisa di-convert atau lakukan perekaman ulang dengan ritme yang lebih cepat</div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Saya sudah daftar tapi
+              statusnya masih diproses, kenapa ya?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Untuk masuk ke dalam kelas
+            reguler, ada beberapa tahap; saat ini sudah melewati tahap isi placement test, tahap berikutnya menunggu
+            proses pemeriksaan, setelah selesai pemeriksaan dan penetapan level insyaAllah kami akan menghubungi untuk
+            lanjut pilih kelas</div>
+        </div>
+
+        <div class="border-b border-border">
+          <div class="flex items-center gap-3 py-4 cursor-pointer select-none" onclick="toggleFaq(this)">
+            <div class="w-10 h-10 flex-shrink-0 mt-[1px] flex items-center justify-center">
+              <div class="faq-chevron">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <line class="faq-icon-horizontal" x1="4" y1="10" x2="16" y2="10" stroke-width="2.2" />
+                  <line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16" stroke-width="2.2" />
+                </svg>
+              </div>
+            </div>
+            <span class="text-[14px] text-[#5B5C60] leading-[1.5] flex-1 tracking-[-0.01em]">Saya ingin mengajak orang
+              lain untuk ikut kelas tahsin online QuranBest, apakah boleh dan bagaimana caranya?</span>
+          </div>
+          <div class="faq-body text-[13px] text-text-gray leading-[1.7] pb-4 pl-[3.25rem]">Silakan, semoga menjadi amal
+            jariyah. Silakan bagikan link berikut : <a href="https://qbest.id/PT14_Share"
+              class="text-gold hover:underline">https://qbest.id/PT14_Share</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark2 text-[#9A9A9A] px-5 py-5 text-xs text-center border-t border-[#3a3a3a]">
+      <div class="mb-1"><strong class="text-gold">Akademi QuranBest</strong></div>
+      <div>© 2026 QuranBest. All rights reserved.</div>
+    </footer>
+
+  </div>
+
+  <!-- WhatsApp Float -->
+  <!-- <div
+    class="wa-float fixed bottom-5 right-5 w-[52px] h-[52px] bg-[#25D366] rounded-full flex items-center justify-center cursor-pointer z-[200] transition-transform hover:scale-110"
+    onclick="alert('Hubungi kami via WhatsApp!')">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+  </div> -->
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
