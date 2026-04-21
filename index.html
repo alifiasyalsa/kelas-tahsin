@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kelas Tahsin QuranBest</title>
+  <base href="/kelas-tahsin/"> 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <link
@@ -855,56 +856,76 @@
         <p class="text-[14px] text-text-gray leading-[1.6] tracking-[-0.01em] mt-2 mb-5">Belajar bersama pengajar
           berpengalaman dan bersertifikat yang siap membimbing kamu dalam perjalanan membaca Al-Quran dengan tartil.</p>
       </div>
+      <!-- Ganti bagian ini di sec-pengajar -->
+      <div class="relative px-5 pb-1">
+        <!-- Arrow Prev -->
+        <button id="teacherPrev"
+          class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white border border-border rounded-full shadow flex items-center justify-center text-text-gray active:bg-bg-card transition-colors"
+          onclick="stepTeacher(-1)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
 
-      <div class="overflow-x-auto px-5 pb-1 no-scrollbar" id="teacherScroll">
-        <div class="flex gap-[14px] w-max">
-          <!-- Teacher cards -->
-          <div
-            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
-            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
-              <img src="img/pemateri/pemateri-1.png" alt="Ustadz Abu Amr" class="w-full h-full object-cover">
+        <div class="overflow-x-auto px-5 pb-1 no-scrollbar" id="teacherScroll">
+          <div class="flex gap-[18px] w-max">
+            <!-- Teacher cards -->
+            <div
+              class="w-[180px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+              <div class="w-[180px] h-[170px] relative overflow-hidden flex-shrink-0">
+                <img src="img/pemateri/pemateri-1.png" alt="Ustadz Abu Amr" class="w-full h-full object-cover">
+              </div>
+              <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+                <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Abu
+                  Amr</div>
+                <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Utama Kelas Tahsin</div>
+              </div>
             </div>
-            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
-              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Abu
-                Amr</div>
-              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Utama Kelas Tahsin</div>
+            <div
+              class="w-[180px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+              <div class="w-[180px] h-[170px] relative overflow-hidden flex-shrink-0">
+                <img src="img/pemateri/pemateri-2.png" alt="Ustadz Irfan Fahmi" class="w-full h-full object-cover">
+              </div>
+              <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+                <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz
+                  Irfan
+                  Fahmi</div>
+                <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
+              </div>
             </div>
-          </div>
-          <div
-            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
-            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
-              <img src="img/pemateri/pemateri-2.png" alt="Ustadz Irfan Fahmi" class="w-full h-full object-cover">
+            <div
+              class="w-[180px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
+              <div class="w-[180px] h-[170px] relative overflow-hidden flex-shrink-0">
+                <img src="img/pemateri/pemateri-3.png" alt="Ustadz Gilang Ramdani" class="w-full h-full object-cover">
+              </div>
+              <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
+                <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz
+                  Gilang
+                  Ramdani</div>
+                <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
+              </div>
             </div>
-            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
-              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Irfan
-                Fahmi</div>
-              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
-            </div>
-          </div>
-          <div
-            class="w-[165px] h-[280px] flex flex-col flex-shrink-0 rounded-[8px] overflow-hidden bg-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]">
-            <div class="w-[165px] h-[170px] relative overflow-hidden flex-shrink-0">
-              <img src="img/pemateri/pemateri-3.png" alt="Ustadz Gilang Ramdani" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-bg-card p-3 text-center flex flex-col flex-1 justify-center">
-              <div class="text-[13px] font-bold text-text-dark uppercase tracking-[-0.01em] leading-[1.3]">Ustadz Gilang
-                Ramdani</div>
-              <div class="text-[11px] text-text-gray mt-1 leading-[1.3]">Pengajar Kelas Tahsin</div>
-            </div>
-          </div>
 
+          </div>
         </div>
-      </div>
-      <div class="flex gap-1 justify-center mt-[14px]" id="teacherDots">
-        <div class="w-[18px] h-[6px] rounded-[4px] bg-gold transition-all cursor-pointer cdot active"
-          onclick="scrollTeacher(0)"></div>
-        <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
-          onclick="scrollTeacher(1)">
+        <!-- Arrow Next -->
+        <button id="teacherNext"
+          class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white border border-border rounded-full shadow flex items-center justify-center text-text-gray active:bg-bg-card transition-colors"
+          onclick="stepTeacher(1)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+        <div class="flex gap-1 justify-center mt-[14px]" id="teacherDots">
+          <div class="w-[18px] h-[6px] rounded-[4px] bg-gold transition-all cursor-pointer cdot active"
+            onclick="scrollTeacher(0)"></div>
+          <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
+            onclick="scrollTeacher(1)">
+          </div>
+          <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
+            onclick="scrollTeacher(2)">
+          </div>
         </div>
-        <div class="w-[6px] h-[6px] rounded-full bg-border transition-all cursor-pointer cdot"
-          onclick="scrollTeacher(2)">
-        </div>
-      </div>
     </section>
 
     <div class="h-px bg-border mx-5"></div>

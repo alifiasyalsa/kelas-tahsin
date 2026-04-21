@@ -90,40 +90,51 @@ function toggleFaq(header) {
   }
 }
 
-function scrollTeacher(index) {
-  const scroll = document.getElementById("teacherScroll");
-  scroll.scrollTo({ left: index * (165 + 14), behavior: "smooth" });
-  document.querySelectorAll(".cdot").forEach((d, i) => {
-    d.classList.toggle("active", i === index);
-    if (i === index) {
-      d.style.width = "18px";
-      d.style.borderRadius = "4px";
-      d.style.background = "#BB8F63";
-    } else {
-      d.style.width = "6px";
-      d.style.borderRadius = "50%";
-      d.style.background = "#CED2DE";
-    }
-  });
+let teacherCurrentIndex = 0;
+const teacherCardWidth = 165 + 14; // width + gap
+const teacherTotalCards = 3; // sesuaikan jumlah kartu
+
+function stepTeacher(dir) {
+  const maxIndex = teacherTotalCards - 1;
+  teacherCurrentIndex = Math.max(0, Math.min(teacherCurrentIndex + dir, maxIndex));
+  scrollTeacher(teacherCurrentIndex);
+  updateTeacherArrows();
 }
 
-const teacherScroll = document.getElementById("teacherScroll");
-if (teacherScroll) {
-  teacherScroll.addEventListener("scroll", () => {
-    const idx = Math.round(teacherScroll.scrollLeft / (165 + 14));
-    document.querySelectorAll(".cdot").forEach((d, i) => {
-      if (i === idx) {
-        d.style.width = "18px";
-        d.style.borderRadius = "4px";
-        d.style.background = "#BB8F63";
-      } else {
-        d.style.width = "6px";
-        d.style.borderRadius = "50%";
-        d.style.background = "#CED2DE";
-      }
-    });
-  });
+function updateTeacherArrows() {
+  const prev = document.getElementById("teacherPrev");
+  const next = document.getElementById("teacherNext");
+  if (prev) prev.style.opacity = teacherCurrentIndex === 0 ? "0.3" : "1";
+  if (next) next.style.opacity = teacherCurrentIndex === teacherTotalCards - 1 ? "0.3" : "1";
 }
+
+function scrollTeacher(index) {
+  teacherCurrentIndex = index;
+  const scroll = document.getElementById("teacherScroll");
+  scroll.scrollTo({ left: index * teacherCardWidth, behavior: "smooth" });
+  document.querySelectorAll(".cdot").forEach((d, i) => {
+    const isActive = i === index;
+    d.style.width = isActive ? "18px" : "6px";
+    d.style.borderRadius = isActive ? "4px" : "50%";
+    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
+  });
+  updateTeacherArrows();
+}
+
+teacherScroll.addEventListener("scroll", () => {
+  const idx = Math.round(teacherScroll.scrollLeft / teacherCardWidth);
+  teacherCurrentIndex = idx;
+  document.querySelectorAll(".cdot").forEach((d, i) => {
+    const isActive = i === idx;
+    d.style.width = isActive ? "18px" : "6px";
+    d.style.borderRadius = isActive ? "4px" : "50%";
+    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
+  });
+  updateTeacherArrows();
+});
+
+updateTeacherArrows();
+
 
 const observer = new IntersectionObserver(
   (entries) => {
