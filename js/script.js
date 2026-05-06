@@ -91,14 +91,20 @@ function toggleFaq(header) {
 }
 
 let teacherCurrentIndex = 0;
-const teacherCardWidth = 165 + 14; // width + gap
-const teacherTotalCards = 3; // sesuaikan jumlah kartu
+const teacherCardWidth = 165 + 14;
+const teacherTotalCards = 27;
 
-function stepTeacher(dir) {
-  const maxIndex = teacherTotalCards - 1;
-  teacherCurrentIndex = Math.max(0, Math.min(teacherCurrentIndex + dir, maxIndex));
-  scrollTeacher(teacherCurrentIndex);
-  updateTeacherArrows();
+function getDotIndex(cardIndex) {
+  return cardIndex % 3;
+}
+
+function updateDots(dotIndex) {
+  document.querySelectorAll(".cdot").forEach((d, i) => {
+    const isActive = i === dotIndex;
+    d.style.width = isActive ? "18px" : "6px";
+    d.style.borderRadius = isActive ? "4px" : "50%";
+    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
+  });
 }
 
 function updateTeacherArrows() {
@@ -108,28 +114,30 @@ function updateTeacherArrows() {
   if (next) next.style.opacity = teacherCurrentIndex === teacherTotalCards - 1 ? "0.3" : "1";
 }
 
-function scrollTeacher(index) {
-  teacherCurrentIndex = index;
+function stepTeacher(dir) {
+  const maxIndex = teacherTotalCards - 1;
+  teacherCurrentIndex = Math.max(0, Math.min(teacherCurrentIndex + dir, maxIndex));
   const scroll = document.getElementById("teacherScroll");
-  scroll.scrollTo({ left: index * teacherCardWidth, behavior: "smooth" });
-  document.querySelectorAll(".cdot").forEach((d, i) => {
-    const isActive = i === index;
-    d.style.width = isActive ? "18px" : "6px";
-    d.style.borderRadius = isActive ? "4px" : "50%";
-    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
-  });
+  scroll.scrollTo({ left: teacherCurrentIndex * teacherCardWidth, behavior: "smooth" });
+  updateDots(getDotIndex(teacherCurrentIndex));
   updateTeacherArrows();
 }
 
+function scrollTeacher(dotIndex) {
+  const base = Math.floor(teacherCurrentIndex / 3) * 3;
+  teacherCurrentIndex = base + dotIndex;
+  if (teacherCurrentIndex >= teacherTotalCards) teacherCurrentIndex -= 3;
+  const scroll = document.getElementById("teacherScroll");
+  scroll.scrollTo({ left: teacherCurrentIndex * teacherCardWidth, behavior: "smooth" });
+  updateDots(dotIndex);
+  updateTeacherArrows();
+}
+
+const teacherScroll = document.getElementById("teacherScroll");
 teacherScroll.addEventListener("scroll", () => {
-  const idx = Math.round(teacherScroll.scrollLeft / teacherCardWidth);
-  teacherCurrentIndex = idx;
-  document.querySelectorAll(".cdot").forEach((d, i) => {
-    const isActive = i === idx;
-    d.style.width = isActive ? "18px" : "6px";
-    d.style.borderRadius = isActive ? "4px" : "50%";
-    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
-  });
+  const cardIndex = Math.round(teacherScroll.scrollLeft / teacherCardWidth);
+  teacherCurrentIndex = cardIndex;
+  updateDots(getDotIndex(cardIndex));
   updateTeacherArrows();
 });
 
