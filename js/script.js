@@ -6,7 +6,7 @@ function openMenu() {
   navDropdown.classList.add("open");
   menuBtn.classList.add("active");
   updateActiveMenuItem();
-  appWrapper.style.paddingTop = (53 + navDropdown.scrollHeight) + "px";
+  appWrapper.style.paddingTop = 53 + navDropdown.scrollHeight + "px";
 }
 function closeMenu() {
   navDropdown.classList.remove("open");
@@ -90,59 +90,69 @@ function toggleFaq(header) {
   }
 }
 
-let teacherCurrentIndex = 0;
-const teacherCardWidth = 165 + 14;
-const teacherTotalCards = 27;
+// SEC PENGAJAR
+const teacherSwiper = new Swiper('.teacher-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 18,
+  grabCursor: true,
+  centeredSlides: false,
+  navigation: {
+    prevEl: '#teacherPrev',
+    nextEl: '#teacherNext',
+  },
+  on: {
+    init(swiper) {
+      buildTeacherDots(swiper);
+      updateTeacherArrows(swiper);
+    },
+    slideChange(swiper) {
+      const shouldCenter = swiper.realIndex !== 0;
+      if (swiper.params.centeredSlides !== shouldCenter) {
+        swiper.params.centeredSlides = shouldCenter;
+        swiper.update();
+      }
 
-function getDotIndex(cardIndex) {
-  return cardIndex % 3;
-}
-
-function updateDots(dotIndex) {
-  document.querySelectorAll(".cdot").forEach((d, i) => {
-    const isActive = i === dotIndex;
-    d.style.width = isActive ? "18px" : "6px";
-    d.style.borderRadius = isActive ? "4px" : "50%";
-    d.style.background = isActive ? "#BB8F63" : "#CED2DE";
-  });
-}
-
-function updateTeacherArrows() {
-  const prev = document.getElementById("teacherPrev");
-  const next = document.getElementById("teacherNext");
-  if (prev) prev.style.opacity = teacherCurrentIndex === 0 ? "0.3" : "1";
-  if (next) next.style.opacity = teacherCurrentIndex === teacherTotalCards - 1 ? "0.3" : "1";
-}
-
-function stepTeacher(dir) {
-  const maxIndex = teacherTotalCards - 1;
-  teacherCurrentIndex = Math.max(0, Math.min(teacherCurrentIndex + dir, maxIndex));
-  const scroll = document.getElementById("teacherScroll");
-  scroll.scrollTo({ left: teacherCurrentIndex * teacherCardWidth, behavior: "smooth" });
-  updateDots(getDotIndex(teacherCurrentIndex));
-  updateTeacherArrows();
-}
-
-function scrollTeacher(dotIndex) {
-  const base = Math.floor(teacherCurrentIndex / 3) * 3;
-  teacherCurrentIndex = base + dotIndex;
-  if (teacherCurrentIndex >= teacherTotalCards) teacherCurrentIndex -= 3;
-  const scroll = document.getElementById("teacherScroll");
-  scroll.scrollTo({ left: teacherCurrentIndex * teacherCardWidth, behavior: "smooth" });
-  updateDots(dotIndex);
-  updateTeacherArrows();
-}
-
-const teacherScroll = document.getElementById("teacherScroll");
-teacherScroll.addEventListener("scroll", () => {
-  const cardIndex = Math.round(teacherScroll.scrollLeft / teacherCardWidth);
-  teacherCurrentIndex = cardIndex;
-  updateDots(getDotIndex(cardIndex));
-  updateTeacherArrows();
+      updateTeacherDots(swiper.realIndex);
+      updateTeacherArrows(swiper);
+    },
+  },
 });
 
-updateTeacherArrows();
+function buildTeacherDots(swiper) {
+  const dotsEl = document.getElementById("teacherDots");
+  dotsEl.innerHTML = "";
+  const total = swiper.slides.length;
 
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement("div");
+    dot.className = "transition-all cursor-pointer";
+    dot.style.height = "6px";
+    applyDotStyle(dot, i === 0);
+    dot.addEventListener("click", () => swiper.slideTo(i));
+    dotsEl.appendChild(dot);
+  }
+}
+
+function applyDotStyle(dot, isActive) {
+  dot.style.width = isActive ? "18px" : "6px";
+  dot.style.borderRadius = isActive ? "4px" : "50%";
+  dot.style.background = isActive ? "#BB8F63" : "#CED2DE";
+}
+
+function updateTeacherDots(activeIndex) {
+  const dots = document.querySelectorAll("#teacherDots div");
+  dots.forEach((dot, i) => applyDotStyle(dot, i === activeIndex));
+}
+
+function updateTeacherArrows(swiper) {
+  const prev = document.getElementById("teacherPrev");
+  const next = document.getElementById("teacherNext");
+  if (prev) prev.style.opacity = swiper.isBeginning ? "0.3" : "1";
+  if (next) next.style.opacity = swiper.isEnd ? "0.3" : "1";
+}
+
+// Init arrow state
+updateTeacherArrows(teacherSwiper);
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -229,38 +239,40 @@ if (bannerSlider) {
 function calculateCountdown() {
   // Target date: May 2, 2026, 00:00:00
   const targetDate = new Date(2026, 4, 2, 0, 0, 0);
-  
+
   // Current time
   const now = new Date();
-  
+
   // Calculate difference in milliseconds
   const timeDifference = targetDate - now;
-  
+
   if (timeDifference <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   }
-  
+
   // Convert to days, hours, minutes, seconds
   const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
   const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-  
+
   return { days, hours, minutes, seconds };
 }
 
 function padZero(num) {
-  return num.toString().padStart(2, '0');
+  return num.toString().padStart(2, "0");
 }
 
 function updateCountdown() {
   const countdown = calculateCountdown();
-  
+
   const daysEl = document.getElementById("countdown-days");
   const hoursEl = document.getElementById("countdown-hours");
   const minutesEl = document.getElementById("countdown-minutes");
   const secondsEl = document.getElementById("countdown-seconds");
-  
+
   if (daysEl) daysEl.textContent = countdown.days;
   if (hoursEl) hoursEl.textContent = padZero(countdown.hours);
   if (minutesEl) minutesEl.textContent = padZero(countdown.minutes);
@@ -270,7 +282,7 @@ function updateCountdown() {
 function initCountdown() {
   // Update immediately
   updateCountdown();
-  
+
   // Update every second
   setInterval(updateCountdown, 1000);
 }
